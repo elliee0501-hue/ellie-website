@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#FFFCF6">
+<meta name="color-scheme" content="light">
+<title>仙台・松島 5天4夜小旅行</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Huninn&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FFFCF6; --ink:#3E3A39;
+  --coral:#F2A497; --yellow:#F6D27A; --sky:#A8D3E6; --green:#B9DAA5;
+  --nav-h:56px;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+body{
+  margin:0; padding-top:calc(var(--nav-h) + 3px);
+  background:var(--paper); color:var(--ink);
+  font-family:'Huninn','Noto Sans TC','PingFang TC','Microsoft JhengHei',sans-serif;
+  font-size:16px; line-height:1.65;
+  -webkit-tap-highlight-color:transparent;
+}
+a{color:inherit}
+h1,h2,h3,p{margin:0}
+
+/* ---------- 頂端固定選單 ---------- */
+.topnav{
+  position:fixed; inset:0 0 auto 0; z-index:100; height:calc(var(--nav-h) + 3px);
+  background:var(--paper); border-bottom:3px solid var(--ink);
+  display:flex; align-items:center; gap:10px; padding:0 12px;
+}
+.brand{display:flex; align-items:center; gap:6px; text-decoration:none; font-size:15px; white-space:nowrap}
+.brand svg{width:28px; height:28px; flex:none}
+.navlinks{display:flex; gap:6px; flex:1; min-width:0; overflow-x:auto; scrollbar-width:none; padding:4px 2px}
+.navlinks::-webkit-scrollbar{display:none}
+.navlinks a{
+  flex:none; text-decoration:none; font-size:14px; line-height:1;
+  padding:8px 13px; border:3px solid var(--ink); border-radius:999px; background:var(--paper);
+}
+.navlinks a.active{background:var(--yellow)}
+
+/* ---------- 共用 ---------- */
+section{max-width:640px; margin:0 auto; padding:30px 16px 4px; scroll-margin-top:calc(var(--nav-h) + 6px)}
+.sec-title{display:flex; align-items:center; gap:10px; font-size:24px; margin-bottom:14px}
+.sec-title .dot{width:22px; height:22px; border:3px solid var(--ink); border-radius:50%; flex:none}
+.card{background:var(--paper); border:3px solid var(--ink); border-radius:26px; padding:16px; box-shadow:0 4px 0 var(--ink)}
+.btn{
+  font:inherit; font-size:15px; color:var(--ink); background:var(--yellow);
+  border:3px solid var(--ink); border-radius:999px; padding:8px 18px; cursor:pointer;
+  box-shadow:0 3px 0 var(--ink); transition:transform .12s;
+}
+.btn:active{transform:translateY(3px); box-shadow:0 0 0 var(--ink)}
+.btn.ghost{background:var(--paper)}
+.btn-row{display:flex; flex-wrap:wrap; gap:10px; margin-top:14px}
+:focus-visible{outline:3px solid var(--coral); outline-offset:3px}
+
+/* ---------- 首頁 ---------- */
+.hero{padding-top:18px}
+.hero-card{border:3px solid var(--ink); border-radius:34px; overflow:hidden; background:var(--paper); box-shadow:0 5px 0 var(--ink)}
+.hero-card svg{display:block; width:100%; height:auto}
+.hero-text{padding:6px 18px 22px; text-align:center}
+.eyebrow{display:inline-block; font-size:13px; padding:2px 14px; background:var(--green); border:3px solid var(--ink); border-radius:999px}
+.hero-text h1{font-size:clamp(30px,9vw,42px); line-height:1.25; margin:10px 0 12px; font-weight:400}
+.chips{display:flex; flex-wrap:wrap; gap:8px; justify-content:center}
+.chip{font-size:13px; padding:3px 12px; border:3px solid var(--ink); border-radius:999px; background:var(--paper)}
+.chip.c1{background:var(--yellow)} .chip.c2{background:var(--sky)} .chip.c3{background:var(--coral)}
+
+.countdown{margin-top:20px; background:var(--sky); display:flex; align-items:center; gap:14px}
+.cd-num{
+  min-width:96px; text-align:center; font-size:48px; line-height:1.1; padding:6px 10px;
+  background:var(--paper); border:3px solid var(--ink); border-radius:22px;
+}
+.cd-text .lab{font-size:14px}
+.cd-text .big{font-size:22px; line-height:1.3}
+.cd-text .sub{font-size:13px; margin-top:2px}
+
+/* ---------- 航班 ---------- */
+.ticket{border:3px solid var(--ink); border-radius:26px; overflow:hidden; margin-bottom:16px; background:var(--paper); box-shadow:0 4px 0 var(--ink)}
+.t-head{display:flex; justify-content:space-between; align-items:center; padding:8px 16px; border-bottom:3px solid var(--ink); font-size:14px}
+.t-head b{font-weight:400; font-size:17px}
+.t-route{display:flex; align-items:center; gap:8px; padding:16px 16px 6px}
+.t-route .code{font-size:34px; line-height:1}
+.t-route .mid{flex:1; position:relative; height:34px}
+.t-route .mid svg{width:100%; height:100%}
+.t-names{display:flex; justify-content:space-between; padding:0 16px 14px; font-size:13px}
+.t-times{display:grid; grid-template-columns:1fr 1fr; border-top:3px dashed var(--ink)}
+.t-times div{padding:10px 16px}
+.t-times div+div{border-left:3px dashed var(--ink)}
+.t-times small{display:block; font-size:12px}
+.t-times strong{font-size:26px; font-weight:400; line-height:1.3}
+.t-times .tbd{font-size:18px; color:var(--ink); background:var(--yellow); border:3px dashed var(--ink); border-radius:12px; padding:0 10px; display:inline-block}
+.t-date{padding:8px 16px; border-top:3px solid var(--ink); font-size:14px; background:var(--paper)}
+.fine{font-size:13px; margin-top:4px}
+
+/* ---------- 每日行程 ---------- */
+.daytabs-wrap{position:sticky; top:calc(var(--nav-h) + 3px); z-index:40; background:var(--paper); margin:0 -16px; padding:8px 16px 10px; border-bottom:3px solid var(--ink)}
+.daytabs{display:flex; gap:8px; overflow-x:auto; scrollbar-width:none; padding:2px 2px 6px}
+.daytabs::-webkit-scrollbar{display:none}
+.daytab{
+  flex:1 0 64px; font:inherit; color:var(--ink); text-align:center; cursor:pointer;
+  background:var(--paper); border:3px solid var(--ink); border-radius:20px; padding:6px 8px;
+  line-height:1.25; transition:transform .15s;
+}
+.daytab .d{display:block; font-size:12px}
+.daytab .n{display:block; font-size:17px}
+.daytab[aria-selected="true"]{background:var(--coral); box-shadow:0 4px 0 var(--ink); animation:tabBounce .55s cubic-bezier(.3,1.6,.5,1)}
+.legend{display:flex; flex-wrap:wrap; align-items:center; gap:6px; font-size:12px; padding-top:2px}
+
+.dayhead{display:flex; align-items:center; gap:12px; margin-top:16px}
+.dayhead .txt{flex:1; min-width:0}
+.daylabel{display:inline-block; font-size:13px; padding:0 12px; background:var(--paper); border:3px solid var(--ink); border-radius:999px}
+.dayhead h3{font-size:24px; line-height:1.3; margin:4px 0 2px; font-weight:400}
+.dayhead .route{font-size:13px; line-height:1.5}
+.artbox{width:112px; height:84px; flex:none; border:3px solid var(--ink); border-radius:22px; background:var(--paper); overflow:hidden}
+.artbox svg{display:block; width:100%; height:100%}
+.art *{stroke:var(--ink); stroke-width:2.5; stroke-linejoin:round; stroke-linecap:round}
+.art .ns{stroke:none}
+
+.tl{list-style:none; margin:20px 0 0; padding:0 0 0 24px; position:relative}
+.tl::before{content:''; position:absolute; left:8px; top:10px; bottom:14px; border-left:3px dashed var(--ink)}
+.tl li{position:relative; margin-bottom:14px; animation:rise .5s cubic-bezier(.3,1.4,.5,1) both; animation-delay:calc(var(--i) * 60ms)}
+.tl li::before{content:''; position:absolute; left:-24px; top:16px; width:18px; height:18px; border:3px solid var(--ink); border-radius:50%; background:var(--paper)}
+.tl li.must::before{background:var(--coral)}
+.stop{border:3px solid var(--ink); border-radius:20px; padding:10px 14px 12px; background:var(--paper)}
+.must .stop{background:var(--yellow); box-shadow:0 3px 0 var(--ink)}
+.stop-top{display:flex; justify-content:space-between; align-items:center; gap:8px}
+.time{font-size:13px; padding:0 10px; background:var(--sky); border:3px solid var(--ink); border-radius:999px; line-height:1.5}
+.must-badge{font-size:13px; padding:0 10px; background:var(--coral); border:3px solid var(--ink); border-radius:999px; transform:rotate(-3deg); line-height:1.5; white-space:nowrap}
+.stop-title{font-size:18px; line-height:1.4; margin:6px 0 6px}
+.modes{display:flex; flex-wrap:wrap; align-items:center; gap:6px; font-size:13px}
+.mode-d{line-height:1.4}
+.tag{display:inline-block; font-size:12px; line-height:1.5; padding:0 10px; border:2.5px solid var(--ink); border-radius:999px; color:var(--ink)}
+.t-plane{background:var(--sky)} .t-train{background:var(--green)} .t-bus{background:var(--yellow)} .t-taxi{background:var(--coral)} .t-walk{background:var(--paper)}
+
+.maps{display:flex; flex-wrap:wrap; gap:6px; margin-top:8px}
+.maplink{white-space:nowrap; font-size:12px; line-height:1.5; padding:0 10px; border:2.5px dashed var(--ink); border-radius:999px; background:var(--paper); text-decoration:none; color:var(--ink)}
+.maplink:active{background:var(--yellow)}
+.hotel.em{background:var(--coral); margin-top:18px}
+.notes-box{display:block; width:100%; min-height:96px; margin-top:12px; padding:10px 14px; font:inherit; font-size:15px; line-height:1.6; color:var(--ink); background:var(--paper); border:3px solid var(--ink); border-radius:18px; resize:vertical}
+.weather{display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin-top:12px; padding:8px 14px; border:3px solid var(--ink); border-radius:20px; background:var(--paper)}
+.weather .wicon{width:36px; height:30px; flex:none}
+.wcond{font-size:16px}
+.wtemp{font-size:20px; line-height:1.2}
+.wchip{font-size:12px; line-height:1.5; padding:0 10px; border:2.5px solid var(--ink); border-radius:999px; background:var(--yellow)}
+.wchip.cold{background:var(--sky)}
+.wnote{flex-basis:100%; font-size:12px; line-height:1.5}
+.note{border:3px dashed var(--ink); border-radius:20px; padding:10px 14px 12px; margin-top:12px; font-size:15px; line-height:1.65}
+.note b{display:block; font-weight:400; font-size:16px; margin-bottom:2px}
+.note.food{background:var(--green)} .note.gift{background:var(--yellow)} .note.warn{background:var(--coral)} .note.info{background:var(--sky)}
+.note a{text-underline-offset:3px}
+table.shows{width:100%; border-collapse:collapse; margin-top:6px; font-size:14px; background:var(--paper); border:3px solid var(--ink); border-radius:14px; overflow:hidden}
+table.shows th,table.shows td{padding:6px 10px; text-align:left; border-bottom:2px dashed var(--ink); font-weight:400}
+table.shows tr:last-child td{border-bottom:0}
+table.shows th{background:var(--yellow); border-bottom:3px solid var(--ink)}
+.overlap{font-size:11px; background:var(--coral); border:2px solid var(--ink); border-radius:999px; padding:0 7px; margin-left:4px; white-space:nowrap}
+.pop{animation:pop .6s cubic-bezier(.3,1.5,.5,1) both}
+
+/* ---------- 住宿 ---------- */
+.hotel{background:var(--sky)}
+.hotel h3{font-size:22px; line-height:1.3; font-weight:400}
+.hotel .jp{font-size:14px}
+.hotel dl{margin:12px 0 0; display:grid; grid-template-columns:auto 1fr; gap:0; border:3px solid var(--ink); border-radius:18px; overflow:hidden; background:var(--paper)}
+.hotel dt,.hotel dd{margin:0; padding:7px 12px; border-bottom:2px dashed var(--ink); font-size:15px}
+.hotel dt{background:var(--yellow); border-right:3px solid var(--ink); white-space:nowrap}
+.hotel dt:nth-last-of-type(1),.hotel dd:last-of-type{border-bottom:0}
+.hotel dd{word-break:break-word}
+.status{display:inline-block; background:var(--green); border:2.5px solid var(--ink); border-radius:999px; padding:0 10px; font-size:13px}
+
+/* ---------- 清單 ---------- */
+.progress-row{display:flex; align-items:center; gap:12px; margin-bottom:14px}
+.progress{flex:1; height:20px; border:3px solid var(--ink); border-radius:999px; background:var(--paper); overflow:hidden}
+.progress .bar{height:100%; width:0; background:var(--green); border-right:3px solid var(--ink); transition:width .5s cubic-bezier(.3,1.4,.5,1)}
+.progress .bar.zero{border-right:0}
+.pcount{font-size:15px; white-space:nowrap}
+.grp{display:inline-block; font-size:15px; font-weight:400; padding:1px 14px; border:3px solid var(--ink); border-radius:999px; margin:14px 0 8px}
+.grp:first-of-type{margin-top:0}
+.g-sky{background:var(--sky)} .g-coral{background:var(--coral)} .g-yellow{background:var(--yellow)} .g-green{background:var(--green)} .g-paper{background:var(--paper)}
+.ck{display:flex; align-items:flex-start; gap:12px; padding:10px 14px; margin-bottom:8px; border:3px solid var(--ink); border-radius:18px; background:var(--paper); cursor:pointer; line-height:1.5; transition:background .2s}
+.ck input{
+  appearance:none; -webkit-appearance:none; flex:none; position:relative;
+  width:26px; height:26px; margin:1px 0 0; border:3px solid var(--ink); border-radius:9px; background:var(--paper); cursor:pointer;
+}
+.ck input::after{content:''; position:absolute; left:6px; top:0; width:6px; height:13px; border:solid var(--ink); border-width:0 3px 3px 0; transform:rotate(45deg) scale(0); transition:transform .25s cubic-bezier(.3,1.8,.5,1)}
+.ck input:checked{background:var(--green)}
+.ck input:checked::after{transform:rotate(45deg) scale(1)}
+.ck.done{background:var(--paper)}
+.ck.done span{text-decoration:line-through; text-decoration-thickness:2px; opacity:.55}
+.ck:has(input:focus-visible){outline:3px solid var(--coral); outline-offset:2px}
+
+footer{max-width:640px; margin:0 auto; padding:36px 16px 48px; text-align:center; font-size:15px}
+footer svg{width:150px; height:auto; display:block; margin:0 auto 6px}
+
+#toast{
+  position:fixed; left:50%; bottom:22px; z-index:200; transform:translate(-50%,30px); opacity:0; pointer-events:none;
+  background:var(--yellow); border:3px solid var(--ink); border-radius:999px; padding:6px 20px; font-size:15px; box-shadow:0 3px 0 var(--ink);
+  transition:transform .35s cubic-bezier(.3,1.6,.5,1), opacity .2s;
+}
+#toast.show{transform:translate(-50%,0); opacity:1}
+
+@media (min-width:640px){
+  body{font-size:17px}
+  .brand span{font-size:16px}
+}
+@media (max-width:360px){
+  .brand span{display:none}
+  .artbox{width:92px; height:70px}
+}
+
+/* ---------- 插圖動畫 ---------- */
+[class^="anim-"]{transform-box:fill-box}
+.anim-drift{animation:drift 7s ease-in-out infinite alternate; transform-origin:center}
+.anim-drift-s{animation:drift 4s ease-in-out infinite alternate; transform-origin:center}
+.anim-cloud1{animation:cloudA 16s ease-in-out infinite alternate}
+.anim-cloud2{animation:cloudB 20s ease-in-out infinite alternate}
+.anim-bob{animation:bob 3.4s ease-in-out infinite; transform-origin:center bottom}
+.anim-bob-s{animation:bobS 2.6s ease-in-out infinite; transform-origin:center}
+.anim-sway{animation:sway 3.6s ease-in-out infinite; transform-origin:center bottom}
+.anim-spin{animation:spin 40s linear infinite; transform-origin:center}
+.anim-pulse{animation:pulse 3.6s ease-in-out infinite; transform-origin:center}
+.anim-train{animation:train 5s ease-in-out infinite alternate}
+.anim-wave{animation:wave 4.5s ease-in-out infinite alternate}
+.anim-tree{animation:sway 5s ease-in-out infinite; transform-origin:center bottom}
+.anim-snow{animation:snow 10s linear infinite}
+@keyframes drift{from{transform:translate(-14px,3px)} to{transform:translate(16px,-4px)}}
+@keyframes cloudA{from{transform:translateX(0)} to{transform:translateX(28px)}}
+@keyframes cloudB{from{transform:translateX(0)} to{transform:translateX(-30px)}}
+@keyframes bob{0%,100%{transform:translateY(0) rotate(-2deg)} 50%{transform:translateY(-5px) rotate(2deg)}}
+@keyframes bobS{0%,100%{transform:translateY(0)} 50%{transform:translateY(-3px)}}
+@keyframes sway{0%,100%{transform:rotate(-3deg)} 50%{transform:rotate(3deg)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes pulse{0%,100%{transform:scale(1)} 50%{transform:scale(1.06)}}
+@keyframes train{from{transform:translateX(-14px)} to{transform:translateX(14px)}}
+@keyframes wave{from{transform:translateX(-6px)} to{transform:translateX(6px)}}
+@keyframes snow{0%{transform:translate(0,-12px); opacity:0} 8%{opacity:1} 100%{transform:translate(14px,250px); opacity:1}}
+@keyframes tabBounce{0%{transform:translateY(0) scale(.9)} 45%{transform:translateY(-8px) scale(1.08)} 100%{transform:translateY(0) scale(1)}}
+@keyframes pop{0%{transform:translateY(18px) scale(.94); opacity:0} 100%{transform:none; opacity:1}}
+@keyframes rise{0%{transform:translateY(14px) scale(.97); opacity:0} 100%{transform:none; opacity:1}}
+
+/* ---------- 減少動態效果 ---------- */
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{
+    animation:none !important; transition:none !important; scroll-behavior:auto !important;
+  }
+  .anim-snow{display:none}
+}
+</style>
+</head>
+<body>
+
+<header class="topnav">
+  <a class="brand" href="#top" aria-label="回到首頁">
+    <svg viewBox="0 0 32 32" aria-hidden="true">
+      <circle cx="16" cy="9" r="6.5" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2.5"/>
+      <path d="M9.6 9 A6.4 6.4 0 0 1 22.4 9 Q16 6.5 9.6 9Z" fill="#3E3A39"/>
+      <path d="M9 16.5 Q16 13 23 16.5 L25 29 H7Z" fill="#F2A497" stroke="#3E3A39" stroke-width="2.5" stroke-linejoin="round"/>
+      <circle cx="16" cy="22" r="3" fill="#F6D27A" stroke="#3E3A39" stroke-width="2"/>
+    </svg>
+    <span>仙台小旅行</span>
+  </a>
+  <nav class="navlinks" id="navlinks" aria-label="頁面選單">
+    <a href="#top">首頁</a>
+    <a href="#flights">航班</a>
+    <a href="#itinerary">行程</a>
+    <a href="#lodging">住宿</a>
+    <a href="#todo">待辦</a>
+    <a href="#packing">行李</a>
+    <a href="#gifts">伴手禮</a>
+    <a href="#food">美食</a>
+    <a href="#shop">購物</a>
+  </nav>
+</header>
+
+<main>
+<!-- ================= 首頁 ================= -->
+<section class="hero" id="top">
+  <div class="hero-card">
+    <svg viewBox="0 0 400 290" role="img" aria-labelledby="heroT">
+      <title id="heroT">仙台與松島的繪本風插圖：飛機、松島的小島與鳥居、遊覽船、電車、櫸木與小芥子人形</title>
+      <defs>
+        <g id="cloudShape">
+          <circle cx="24" cy="26" r="14"/><circle cx="44" cy="19" r="18"/><circle cx="66" cy="27" r="13"/><rect x="14" y="26" width="62" height="14" rx="7"/>
+        </g>
+        <g id="treeShape">
+          <circle cx="16" cy="40" r="20"/><circle cx="44" cy="36" r="22"/><circle cx="30" cy="18" r="20"/>
+        </g>
+      </defs>
+
+      <!-- 太陽 -->
+      <g class="anim-pulse">
+        <circle cx="330" cy="62" r="28" fill="#F6D27A" stroke="#3E3A39" stroke-width="3"/>
+      </g>
+      <g class="anim-spin" fill="none" stroke="#3E3A39" stroke-width="3" stroke-linecap="round">
+        <path d="M368 62H376M356.9 88.9L362.5 94.5M330 100V108M303.1 88.9L297.5 94.5M292 62H284M303.1 35.1L297.5 29.5M330 24V16M356.9 35.1L362.5 29.5"/>
+      </g>
+
+      <!-- 雲 -->
+      <g class="anim-cloud1"><g transform="translate(10 22)">
+        <use href="#cloudShape" fill="#3E3A39" stroke="#3E3A39" stroke-width="6" stroke-linejoin="round"/>
+        <use href="#cloudShape" fill="#FFFCF6"/>
+      </g></g>
+      <g class="anim-cloud2"><g transform="translate(205 20) scale(.8)">
+        <use href="#cloudShape" fill="#3E3A39" stroke="#3E3A39" stroke-width="7" stroke-linejoin="round"/>
+        <use href="#cloudShape" fill="#FFFCF6"/>
+      </g></g>
+
+      <!-- 飛機 -->
+      <g transform="translate(170 104)"><g class="anim-drift">
+        <path d="M-50 3H-72" fill="none" stroke="#3E3A39" stroke-width="3" stroke-linecap="round" stroke-dasharray="6 7"/>
+        <path d="M-26 -8L-35 -23L-22 -23L-12 -9Z" fill="#F2A497" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round"/>
+        <path d="M-30 0Q-30 -9 -14 -10L22 -10Q36 -8 40 0Q36 8 22 9L-14 9Q-30 9 -30 0Z" fill="#A8D3E6" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round"/>
+        <path d="M-4 5L-17 23L-3 23L15 5Z" fill="#F6D27A" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round"/>
+        <circle cx="-8" cy="-3" r="2.4" fill="#3E3A39"/><circle cx="2" cy="-3" r="2.4" fill="#3E3A39"/><circle cx="12" cy="-3" r="2.4" fill="#3E3A39"/>
+      </g></g>
+
+      <!-- 海 -->
+      <path d="M0 168Q25 160 50 168T100 168T150 168T200 168T250 168T300 168T350 168T400 168V270H0Z" fill="#A8D3E6" stroke="#3E3A39" stroke-width="3"/>
+      <g class="anim-wave" fill="none" stroke="#FFFCF6" stroke-width="3" stroke-linecap="round">
+        <path d="M250 206q8 -6 16 0t16 0"/><path d="M60 196q8 -6 16 0t16 0"/><path d="M300 228q8 -6 16 0t16 0"/><path d="M190 236q8 -6 16 0t16 0"/><path d="M20 224q8 -6 16 0t16 0"/>
+      </g>
+
+      <!-- 松島的小島與松樹 -->
+      <path d="M70 176Q80 148 120 150Q155 150 172 176Z" fill="#F6D27A" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round"/>
+      <path d="M108 128L97 153H119Z" fill="#B9DAA5" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round"/>
+      <path d="M134 134L125 156H143Z" fill="#B9DAA5" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round"/>
+      <path d="M153 143L146 161H160Z" fill="#B9DAA5" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round"/>
+      <path d="M262 178Q272 156 306 158Q336 160 348 178Z" fill="#F6D27A" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round"/>
+      <path d="M292 138L282 161H302Z" fill="#B9DAA5" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round"/>
+      <path d="M318 147L311 165H325Z" fill="#B9DAA5" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round"/>
+
+      <!-- 海上鳥居 -->
+      <g stroke="#3E3A39" stroke-width="3" stroke-linejoin="round" fill="#F2A497">
+        <rect x="196" y="142" width="9" height="44"/><rect x="223" y="142" width="9" height="44"/>
+        <rect x="196" y="156" width="36" height="7"/>
+        <path d="M182 128Q214 140 246 128L244 140Q214 150 184 140Z"/>
+      </g>
+      <path d="M186 188q6 -5 12 0t12 0t12 0t12 0" fill="none" stroke="#FFFCF6" stroke-width="3" stroke-linecap="round"/>
+
+      <!-- 遊覽船 -->
+      <g transform="translate(150 224)"><g class="anim-bob">
+        <path d="M-30 0H30L22 15H-22Z" fill="#F6D27A" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round"/>
+        <rect x="-11" y="-15" width="22" height="15" rx="4" fill="#FFFCF6" stroke="#3E3A39" stroke-width="3"/>
+        <circle cx="0" cy="-8" r="3" fill="#A8D3E6" stroke="#3E3A39" stroke-width="2"/>
+        <path d="M0 -15V-28" fill="none" stroke="#3E3A39" stroke-width="3" stroke-linecap="round"/>
+        <path d="M0 -28L13 -23L0 -18Z" fill="#F2A497" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round"/>
+      </g></g>
+
+      <!-- 地面與軌道 -->
+      <path d="M0 252Q100 242 200 250T400 246V290H0Z" fill="#B9DAA5" stroke="#3E3A39" stroke-width="3"/>
+      <path d="M0 274H400" fill="none" stroke="#3E3A39" stroke-width="3"/>
+      <path d="M0 281H400" fill="none" stroke="#3E3A39" stroke-width="6" stroke-dasharray="3 15"/>
+
+      <!-- 電車 -->
+      <g class="anim-train">
+        <g transform="translate(112 0)" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round">
+          <rect x="0" y="232" width="62" height="30" rx="10" fill="#F2A497"/>
+          <rect x="68" y="232" width="66" height="30" rx="12" fill="#F2A497"/>
+          <path d="M62 247H68" fill="none"/>
+          <rect x="8" y="240" width="12" height="10" rx="3" fill="#FFFCF6" stroke-width="2.5"/>
+          <rect x="26" y="240" width="12" height="10" rx="3" fill="#FFFCF6" stroke-width="2.5"/>
+          <rect x="76" y="240" width="12" height="10" rx="3" fill="#FFFCF6" stroke-width="2.5"/>
+          <rect x="94" y="240" width="12" height="10" rx="3" fill="#FFFCF6" stroke-width="2.5"/>
+          <rect x="112" y="240" width="14" height="10" rx="4" fill="#A8D3E6" stroke-width="2.5"/>
+          <circle cx="14" cy="265" r="6" fill="#FFFCF6"/><circle cx="48" cy="265" r="6" fill="#FFFCF6"/><circle cx="82" cy="265" r="6" fill="#FFFCF6"/><circle cx="118" cy="265" r="6" fill="#FFFCF6"/>
+        </g>
+      </g>
+
+      <!-- 櫸木（杜之都） -->
+      <g transform="translate(-2 36)">
+        <g class="anim-tree">
+          <rect x="24" y="190" width="12" height="32" fill="#F6D27A" stroke="#3E3A39" stroke-width="3"/>
+          <g transform="translate(0 150)">
+            <use href="#treeShape" fill="#3E3A39" stroke="#3E3A39" stroke-width="6" stroke-linejoin="round"/>
+            <use href="#treeShape" fill="#B9DAA5"/>
+          </g>
+        </g>
+      </g>
+
+      <!-- 小芥子 -->
+      <g class="anim-sway">
+        <path d="M350 214Q362 208 374 214L378 254H346Z" fill="#F2A497" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round"/>
+        <path d="M348 234H376" fill="none" stroke="#F6D27A" stroke-width="6"/>
+        <circle cx="362" cy="226" r="5" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2.5"/>
+        <circle cx="362" cy="196" r="16" fill="#FFFCF6" stroke="#3E3A39" stroke-width="3"/>
+        <path d="M346 196A16 16 0 0 1 378 196Q362 188 346 196Z" fill="#3E3A39" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round"/>
+        <circle cx="356" cy="201" r="2" fill="#3E3A39"/><circle cx="368" cy="201" r="2" fill="#3E3A39"/>
+        <circle cx="352" cy="206" r="3" fill="#F2A497"/><circle cx="372" cy="206" r="3" fill="#F2A497"/>
+      </g>
+
+      <!-- 小雪 -->
+      <g fill="#FFFCF6" stroke="#3E3A39" stroke-width="2">
+        <circle class="anim-snow" style="animation-delay:-1s" cx="40" cy="10" r="3.5"/>
+        <circle class="anim-snow" style="animation-delay:-3.5s" cx="120" cy="6" r="3"/>
+        <circle class="anim-snow" style="animation-delay:-6s" cx="215" cy="12" r="3.5"/>
+        <circle class="anim-snow" style="animation-delay:-8s" cx="285" cy="4" r="3"/>
+        <circle class="anim-snow" style="animation-delay:-2.2s" cx="345" cy="10" r="3.5"/>
+        <circle class="anim-snow" style="animation-delay:-5s" cx="385" cy="8" r="3"/>
+        <circle class="anim-snow" style="animation-delay:-7.2s" cx="85" cy="12" r="3"/>
+      </g>
+    </svg>
+    <div class="hero-text">
+      <span class="eyebrow">宮城縣・仙台市</span>
+      <h1>仙台・松島<br>5天4夜小旅行</h1>
+      <div class="chips">
+        <span class="chip c1">2026/11/27（五）– 12/1（二）</span>
+        <span class="chip c2">2位成人</span>
+        <span class="chip c3">長榮航空</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="card countdown" id="countdown" aria-live="polite">
+    <div class="cd-num" id="cdNum">–</div>
+    <div class="cd-text">
+      <div class="lab">出發倒數</div>
+      <div class="big" id="cdBig">計算中…</div>
+      <div class="sub">以出發日 11/27（五）計算</div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 航班 ================= -->
+<section id="flights">
+  <h2 class="sec-title"><span class="dot" style="background:var(--sky)"></span>航班資訊</h2>
+  <div id="flightCards"></div>
+  <p class="fine">起降時間已依電子機票更新。完成報到須在起飛前一小時內抵達櫃檯，逾時航空公司可取消報到紀錄。</p>
+</section>
+
+<!-- ================= 每日行程 ================= -->
+<section id="itinerary">
+  <h2 class="sec-title"><span class="dot" style="background:var(--coral)"></span>每日行程</h2>
+  <div class="daytabs-wrap">
+    <div class="daytabs" role="tablist" aria-label="選擇日期" id="dayTabs"></div>
+    <div class="legend" aria-label="交通標籤說明">
+      <span>交通：</span>
+      <span class="tag t-plane">飛機</span><span class="tag t-train">電車</span><span class="tag t-bus">巴士</span><span class="tag t-taxi">計程車</span><span class="tag t-walk">步行</span>
+      <span class="must-badge" style="transform:none">★ 必去</span>
+    </div>
+  </div>
+  <div id="dayPanel" role="tabpanel" aria-labelledby="tab-0" tabindex="-1"></div>
+</section>
+
+<!-- ================= 住宿 ================= -->
+<section id="lodging">
+  <h2 class="sec-title"><span class="dot" style="background:var(--yellow)"></span>住宿資訊</h2>
+  <div class="card hotel">
+    <h3>Hotel Keihan Sendai</h3>
+    <p class="jp">ホテル京阪仙台</p>
+    <dl>
+      <dt>地址</dt><dd>宮城県仙台市青葉区中央3丁目3-5</dd>
+      <dt>電話</dt><dd><a href="tel:+81222630321">+81 22-263-0321</a></dd>
+      <dt>交通</dt><dd>從機場搭仙台機場直達線（約30分鐘）→ 仙台站西口下車 → 步行約8分鐘</dd>
+      <dt>入住</dt><dd>11/27（五）15:00 起</dd>
+      <dt>退房</dt><dd>12/1（二）11:00 前</dd>
+      <dt>房型</dt><dd>雙人房／1間</dd>
+      <dt>天數</dt><dd>4晚／2位成人</dd>
+      <dt>平台</dt><dd>Booking.com</dd>
+      <dt>編號</dt><dd>5791.476.777</dd>
+      <dt>狀態</dt><dd><span class="status">已確認</span></dd>
+      <dt>付款</dt><dd>入住時付款</dd>
+      <dt>金額</dt><dd>¥61,700（約 NT$12,737）</dd>
+      <dt>早餐</dt><dd>不包含</dd>
+      <dt>停車</dt><dd>無免費停車位</dd>
+    </dl>
+    <div class="btn-row">
+      <button class="btn" type="button" id="copyAddr">複製日文地址</button>
+      <a class="btn ghost" style="text-decoration:none" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=%E3%83%9B%E3%83%86%E3%83%AB%E4%BA%AC%E9%98%AA%E4%BB%99%E5%8F%B0">開啟地圖</a>
+    </div>
+    <p class="fine">訂房 PIN 屬於敏感驗證資訊，不放進可分享給同行旅伴的行程資料。</p>
+  </div>
+
+  <div class="card hotel em" id="emergency">
+    <h3>緊急聯絡資訊</h3>
+    <dl>
+      <dt>報警</dt><dd><a href="tel:110">110</a>（日本警察）</dd>
+      <dt>救護</dt><dd><a href="tel:119">119</a>（救護車・消防）</dd>
+      <dt>飯店</dt><dd><a href="tel:+81222630321">+81 22-263-0321</a></dd>
+    </dl>
+    <label for="emNotes" class="fine" style="display:block; margin-top:12px">自行填寫：緊急聯絡人、旅遊保險專線、長榮航空聯絡電話等</label>
+    <textarea class="notes-box" id="emNotes" placeholder="例如：緊急聯絡人 ○○○ 09xx-xxx-xxx　保險專線 …　長榮航空 …"></textarea>
+    <p class="fine">只存在這支手機的瀏覽器裡，不會上傳。</p>
+  </div>
+</section>
+
+<!-- ================= 出發前待辦 ================= -->
+<section id="todo">
+  <h2 class="sec-title"><span class="dot" style="background:var(--green)"></span>出發前待辦與確認</h2>
+  <div class="progress-row">
+    <div class="progress" aria-hidden="true"><div class="bar zero" id="todoBar"></div></div>
+    <span class="pcount" id="todoCount">0 / 12 項完成</span>
+  </div>
+  <div id="todoList"></div>
+  <div class="btn-row">
+    <button class="btn" type="button" id="copyTodo">複製待辦清單</button>
+    <button class="btn ghost" type="button" id="resetTodo">全部取消勾選</button>
+  </div>
+</section>
+
+<!-- ================= 行李清單 ================= -->
+<section id="packing">
+  <h2 class="sec-title"><span class="dot" style="background:var(--coral)"></span>冬季行李清單</h2>
+  <div class="progress-row">
+    <div class="progress" aria-hidden="true"><div class="bar zero" id="packBar"></div></div>
+    <span class="pcount" id="packCount">0 / 17 項完成</span>
+  </div>
+  <div id="packList"></div>
+  <div class="btn-row">
+    <button class="btn" type="button" id="copyPack">複製行李清單</button>
+    <button class="btn ghost" type="button" id="resetPack">全部取消勾選</button>
+  </div>
+</section>
+<!-- ================= 必買伴手禮 ================= -->
+<section id="gifts">
+  <h2 class="sec-title"><span class="dot" style="background:var(--yellow)"></span>必買伴手禮</h2>
+  <div class="progress-row">
+    <div class="progress" aria-hidden="true"><div class="bar zero" id="giftBar"></div></div>
+    <span class="pcount" id="giftCount">0 / 6 項完成</span>
+  </div>
+  <div id="giftList"></div>
+  <p class="fine">冷藏甜點需確認保存期限與保冷方式。</p>
+  <div class="btn-row">
+    <button class="btn" type="button" id="copyGift">複製伴手禮清單</button>
+    <button class="btn ghost" type="button" id="resetGift">全部取消勾選</button>
+  </div>
+</section>
+<!-- ================= 美食推薦 ================= -->
+<section id="food">
+  <h2 class="sec-title"><span class="dot" style="background:var(--green)"></span>美食推薦</h2>
+  <div class="progress-row">
+    <div class="progress" aria-hidden="true"><div class="bar zero" id="foodBar"></div></div>
+    <span class="pcount" id="foodCount">0 / 12 項完成</span>
+  </div>
+  <div id="foodList"></div>
+  <p class="fine">吃過就打勾。想加的店家或料理，之後告訴我就能補上。</p>
+  <div class="btn-row">
+    <button class="btn" type="button" id="copyFood">複製美食清單</button>
+    <button class="btn ghost" type="button" id="resetFood">全部取消勾選</button>
+  </div>
+</section>
+<!-- ================= 購物必逛 ================= -->
+<section id="shop">
+  <h2 class="sec-title"><span class="dot" style="background:var(--coral)"></span>購物必逛</h2>
+  <div class="progress-row">
+    <div class="progress" aria-hidden="true"><div class="bar zero" id="shopBar"></div></div>
+    <span class="pcount" id="shopCount">0 / 2 項完成</span>
+  </div>
+  <div id="shopList"></div>
+  <div class="btn-row">
+    <button class="btn" type="button" id="copyShop">複製購物清單</button>
+    <button class="btn ghost" type="button" id="resetShop">全部取消勾選</button>
+  </div>
+</section>
+</main>
+
+<footer>
+  <svg viewBox="0 0 150 80" role="img" aria-label="牛舌定食的小插圖">
+    <g stroke="#3E3A39" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+      <ellipse cx="75" cy="52" rx="62" ry="22" fill="#FFFCF6"/>
+      <ellipse cx="75" cy="52" rx="46" ry="14" fill="#F6D27A"/>
+      <g class="anim-bob-s">
+        <rect x="40" y="30" width="30" height="16" rx="8" fill="#F2A497"/>
+        <rect x="62" y="24" width="30" height="16" rx="8" fill="#F2A497"/>
+        <rect x="82" y="32" width="30" height="16" rx="8" fill="#F2A497"/>
+        <path d="M50 35V41M76 29V35M96 37V43" fill="none" stroke-width="2.5"/>
+      </g>
+      <circle cx="124" cy="46" r="7" fill="#B9DAA5"/>
+    </g>
+  </svg>
+  <p>祝旅途平安，玩得開心！</p>
+</footer>
+
+<div id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function(){
+'use strict';
+
+var S='#A8D3E6', Y='#F6D27A', C='#F2A497', G='#B9DAA5', P='#FFFCF6', K='#3E3A39';
+var reduceMQ = window.matchMedia ? window.matchMedia('(prefers-reduced-motion: reduce)') : {matches:false};
+function smooth(){ return reduceMQ.matches ? 'auto' : 'smooth'; }
+
+/* ---------- 資料 ---------- */
+var TAGS = {
+  plane:['飛機','t-plane'], train:['電車','t-train'], bus:['巴士','t-bus'],
+  taxi:['計程車','t-taxi'], walk:['步行','t-walk']
+};
+
+var DAYS = [
+ { n:1, date:'11/27', wd:'五', title:'抵達仙台', color:'sky',
+   route:'仙台機場 → 飯店 → 商店街 → 牛舌晚餐',
+   stops:[
+     {t:'08:00–08:15', title:'抵達桃園機場第2航廈', m:[], d:'起飛前約2小時報到', g:[['','桃園國際機場第二航廈']]},
+     {t:'10:15', title:'桃園機場第2航廈起飛', m:['plane'], d:'BR118'},
+     {t:'14:25', title:'抵達仙台機場', m:['plane'], d:'BR118', g:[['','仙台空港']]},
+     {t:'15:30–16:30', title:'前往仙台市區', m:['train'], d:'仙台空港アクセス線，約17–25分鐘・¥660'},
+     {t:'16:30–17:00', title:'Hotel Keihan Sendai 入住', m:['walk'], d:'仙台站西口步行約8分鐘', g:[['','ホテル京阪仙台']]},
+     {t:'17:00–19:00', title:'CLIS ROAD、S-PAL、PARCO', m:['walk'], d:'PARCO 營業至 20:00；必逛：PARCO1 3 樓 Pokémon Center TOHOKU、8 樓吉伊卡哇樂園', g:[['CLIS ROAD','仙台クリスロード商店街'],['S-PAL','S-PAL仙台'],['PARCO','仙台PARCO']]},
+     {t:'19:00後', title:'仙台牛舌晚餐', m:['walk'], d:'市區步行', g:[['閣','牛たん料理 閣 仙台'],['善治郎','たんや善治郎 仙台'],['司','牛タン焼専門店 司 仙台']]}
+   ],
+   notes:[
+     {k:'info', h:'仙台機場到市區', b:'仙台機場是日本少數有鐵道直達市區的二線機場。搭「仙台空港アクセス線」約 17–25 分鐘到仙台站，車資 ¥660，可用現金購票，或用西瓜卡（Suica）、ICOCA 刷卡進站。<br>車站在機場 2 樓，出入境大廳後上樓走連通道就到，全程無階梯，拉行李很輕鬆。<br>班次：10:00–16:00 約每 20 分鐘一班，其他時段每小時約 1–3 班；首班 5:45、末班 23:10。<br>車廂 2–4 節，全車自由席，部分車廂有行李置放區。<br>抵達仙台站有兩個剪票口：中央剪票口靠近西口，東剪票口靠近東西自由通路。飯店在西口方向，走中央剪票口較近。'},
+     {k:'food', h:'美食推薦', b:'牛たん料理 閣、たんや善治郎、牛タン焼専門店 司。'},
+   ]},
+ { n:2, date:'11/28', wd:'六', title:'仙台市區一日遊', color:'sky', art:5,
+   route:'瑞鳳殿 → 仙台城跡 → 牛舌午餐 → 定禪寺通 → 一番町',
+   stops:[
+     {t:'08:30', title:'Hotel Keihan Sendai 出發', m:['walk'], d:'步行前往仙台站西口', g:[['','ホテル京阪仙台']]},
+     {t:'09:00', title:'仙台站搭 Loople Sendai', m:['bus'], d:'西口 16 號乘車處；先到旁邊的案內所買一日乘車券（¥700）', g:[['','仙台駅西口 るーぷる仙台 乗り場']]},
+     {t:'09:13', title:'抵達瑞鳳殿前', m:['bus'], d:'下車後還要走一段上坡'},
+     {t:'09:20–10:30', title:'瑞鳳殿', m:['walk'], d:'伊達政宗靈廟、拍照、散步・大人 ¥570（一日乘車券可折 ¥110）', g:[['','瑞鳳殿']]},
+     {t:'10:43', title:'搭 Loople 往仙台城跡', m:['bus'], d:'瑞鳳殿前 10:43 發車，約 10:53 到仙台城跡'},
+     {t:'10:53–11:53', title:'仙台城跡', m:['walk'], d:'伊達政宗騎馬像＋仙台市景・免費', g:[['','仙台城跡 本丸北壁石垣']]},
+     {t:'11:53', title:'回市中心', m:['bus','train'], d:'Loople：仙台城跡 11:53 發車，12:25 到定禪寺通市役所前、12:37 到仙台站前（備案 12:08 發車）；也可搭地鐵'},
+     {t:'12:30–13:30', title:'牛舌午餐', m:['walk'], d:'閣／善治郎／司擇一', g:[['閣','牛たん料理 閣 仙台'],['善治郎','たんや善治郎 仙台'],['司','牛タン焼専門店 司 仙台']]},
+     {t:'13:45–14:30', title:'定禪寺通', m:['walk'], d:'櫸木大道散步、拍照', g:[['','定禅寺通']]},
+     {t:'14:30–16:30', title:'一番町商店街', m:['walk'], d:'逛街＋甜點；途中必買 Maison Cœlacanthe（腔棘魚最中），週六營業 10:00–19:00', g:[['','仙台一番町商店街'],['Maison Cœlacanthe','Maison Cœlacanthe 仙台']]},
+     {t:'16:30–18:00', title:'CLIS ROAD → 仙台站', m:['walk'], d:'一路逛回去', g:[['','仙台クリスロード商店街']]},
+     {t:'18:00後', title:'S-PAL／PARCO', m:['walk'], d:'繼續購物，或等朋友抵達；S-PAL 本館週六開到 21:00；必逛：PARCO1 3 樓 Pokémon Center TOHOKU、8 樓吉伊卡哇樂園', g:[['S-PAL','S-PAL仙台'],['PARCO','仙台PARCO']]},
+     {t:'晚上', title:'跟朋友會合吃晚餐', m:[], d:'時間完全彈性'}
+   ],
+   notes:[
+     {k:'info', h:'Loople Sendai（仙台觀光循環巴士）', b:'11/28 是星期六，官方班表是週末、假日每 15 分鐘一班，首班 09:00 從仙台站西口 16 號站牌出發。09:00 這班約 09:13 到瑞鳳殿前、09:23 到仙台城跡，用它串起上午兩個景點很順。<br>首班 09:00、末班 16:00（從仙台站前出發），一圈約 70 分鐘。瑞鳳殿前每小時 :13、:28、:43、:58 到站，仙台城跡每小時 :08、:23、:38、:53 到站，兩站之間約 10 分鐘。<br>搭乘處在西口巴士總站 16 號乘車處：背對車站走下巴士總站的樓梯，左手邊可見紅色站牌。<br>票價：單程 ¥300，一日乘車券 ¥700（Loople・地下鐵共通一日券 ¥1,000，兩種一日券都不能搭仙台市路線巴士）。下車時可付現金、Suica 等交通 IC 卡，或感應式信用卡。一日乘車券在仙台站西口巴士總站案內所買，就在 16 號乘車處旁。<br>這天上午預計搭 Loople 3 趟（仙台站→瑞鳳殿、→仙台城跡、→市中心），單程合計 ¥900，買一日券 ¥700 比較划算，另外瑞鳳殿和青葉城資料展示館出示一日券還有折扣。'},
+     {k:'warn', h:'瑞鳳殿提醒', b:'11/28 適用 2–11 月開館時間：09:00–16:50，最晚 16:30 入場；大人 ¥570，出示 Loople 一日乘車券可折 ¥110。入口在山坡地，前往售票處的路很陡，約 80 階，境內還有其他石階，不是輕鬆的平地散步。放在第一站，趁早上體力最好處理掉，停留約 60–70 分鐘。'},
+     {k:'info', h:'仙台城跡', b:'不用抱著「看一座日本城」的期待，主要看伊達政宗騎馬像、本丸跡和仙台市區景觀。騎馬像就在城跡範圍內，第一次來仙台很值得留一張照片，停留約 45–60 分鐘。<br>仙台城跡本身免費、全年無休。旁邊的青葉城資料展示館 11–3 月 9:00–16:00（週三休，11/28 是週六有開），大人 ¥770，出示一日乘車券有優惠（手冊範例為 ¥660）；仙台城見聞館 9:00–17:00，免費。'},
+     {k:'food', h:'牛舌午餐', b:'閣、善治郎、司三間擇一，依離哪間近和排隊狀況決定。如果 11/27 晚上已經吃其中一家，這天換另外一家。'},
+     {k:'info', h:'定禪寺通', b:'約 700 公尺的櫸木林蔭大道，是仙台「森林之都」很代表性的街景。不用排成正式景點參觀，散步拍照 30–45 分鐘即可。'},
+     {k:'info', h:'傍晚彈性安排', b:'16:30 之後的時間故意不排死：朋友早到就提早會合，晚到就繼續逛，逛累了找咖啡廳，看到想買的就慢慢買。'}
+   ]},
+ { n:3, date:'11/29', wd:'日', title:'神社與麵包超人', color:'coral',
+   route:'金蛇水神社 → 大崎八幡宮 → 麵包超人購物商場',
+   stops:[
+     {t:'08:41', title:'仙台出發，搭JR至岩沼站', m:['train'], d:'JR東北本線 08:41→09:03（較早一班 08:25→08:47）', g:[['岩沼站','岩沼駅']]},
+     {t:'09:30–11:30', title:'金蛇水神社', must:1, m:['taxi'], d:'岩沼站轉計程車，約10分鐘', g:[['','金蛇水神社']]},
+     {t:'11:30–12:18', title:'返回岩沼站，搭JR回仙台', m:['taxi','train'], d:'建議 11:56→12:18；備案 12:22→12:43'},
+     {t:'12:30–13:15', title:'仙台午餐', m:['walk'], d:'仙台站周邊'},
+     {t:'13:30–14:30', title:'大崎八幡宮', must:1, m:['bus'], d:'仙台站西口搭市營巴士', g:[['','大崎八幡宮']]},
+     {t:'15:00–16:30', title:'仙台麵包超人兒童博物館＆購物商場', must:1, m:['walk'], d:'Museum 10:00–17:00（最後入場 16:00）、Shopping Mall 10:00–17:00', g:[['','仙台アンパンマンこどもミュージアム&モール']]}
+   ],
+   notes:[
+     {k:'info', h:'岩沼站 JR 班次', html:'<table class="shows"><thead><tr><th>方向</th><th>班次（出發→抵達）</th></tr></thead><tbody>'+'<tr><td>仙台→岩沼</td><td>08:07→08:29、08:25→08:47、08:41→09:03、09:05→09:26</td></tr>'+'<tr><td>岩沼→仙台</td><td>11:45→12:06、11:56→12:18、12:22→12:43、12:46→13:08、13:02→13:23、13:20→13:41</td></tr>'+'</tbody></table>'},
+     {k:'warn', h:'午餐與回程安排', b:'金蛇水神社 11:30 結束後要叫計程車回岩沼站（約 10 分鐘），趕 11:56 這班比較穩；若沒趕上，12:22→12:43 還來得及，但午餐會縮短到約 30 分鐘。班次都約 21–22 分鐘。建議事先確認回程計程車怎麼叫，神社附近不一定隨時有車。'},
+     {k:'info', h:'大崎八幡宮交通', b:'在仙台站西口的巴士站 10 號（往定義、作並溫泉）或 15 號（往南吉成団地、国見ヶ丘）站牌搭車，在「大崎八幡宮前」下車，車行時間約 15 分鐘。'},
+     {k:'info', h:'麵包超人商場資訊', b:'營業時間：Museum 10:00–17:00（最後入場 16:00）、Shopping Mall 10:00–17:00。<br>JR仙台站步行約9分鐘，或地鐵宮城野通站步行約7分鐘。<br>地址：宮城県仙台市宮城野区小田原山本丁101-14<br>電話：<a href="tel:+81222988855">022-298-8855</a>'}
+   ]},
+ { n:4, date:'11/30', wd:'一', title:'松島一日遊', color:'green', art:1,
+   route:'仙台 → 松島灣 → 古寺巡禮 → 返回仙台',
+   stops:[
+     {t:'08:16', title:'仙台出發', m:['train'], d:'JR仙石線 08:16→08:55（約39分鐘）；備案 09:00→09:39'},
+     {t:'08:55–10:00', title:'抵達松島海岸、海邊散步', m:['walk'], d:'松島海岸站步行', g:[['','松島海岸駅']]},
+     {t:'10:00–11:00', title:'松島灣遊覽船', must:1, m:['walk'], d:'仁王丸航線，每小時一班（9:00–16:00），約50分鐘・票價 ¥1,500', g:[['','松島島巡り観光船 松島海岸']]},
+     {t:'11:00–12:00', title:'五大堂', m:['walk'], d:'免費，8:30–17:00', g:[['','五大堂 松島']]},
+     {t:'12:00–13:30', title:'牡蠣、海鮮午餐', m:['walk'], d:''},
+     {t:'13:30–14:30', title:'瑞巖寺', must:1, m:['walk'], d:'11月 8:30–16:00（15:30 停止受付）・票價 ¥1,000', g:[['','瑞巌寺']]},
+     {t:'14:30–15:30', title:'圓通院', must:1, m:['walk'], d:'11月 9:00–16:00（12月至3月 9:00–15:30）・白天拝觀 ¥500', g:[['','円通院 松島']]},
+     {t:'15:30–16:30', title:'松島商店街、伴手禮', m:['walk'], d:''},
+     {t:'17:12', title:'返回仙台', m:['train'], d:'JR仙石線 17:12→17:51；備案 16:44→17:22、17:44→18:22'}
+   ],
+   notes:[
+     {k:'warn', h:'交通重點', b:'搭 JR仙石線到「松島海岸駅」，不是「松島駅」。'},
+     {k:'info', h:'仙石線班次（仙台⇄松島海岸）', html:'<table class="shows"><thead><tr><th>方向</th><th>班次（出發→抵達）</th></tr></thead><tbody>'+'<tr><td>仙台→松島海岸</td><td>08:16→08:55、09:00→09:39、09:30→10:10</td></tr>'+'<tr><td>松島海岸→仙台</td><td>16:05→16:43、16:13→16:51、16:44→17:22、17:12→17:51、17:44→18:22</td></tr>'+'</tbody></table>'},
+     {k:'warn', h:'去程班次', b:'建議搭 08:16 這班，08:55 抵達後走到碼頭約 10–15 分鐘，趕 10:00 的遊覽船很從容。若搭 09:00→09:39 那班，抵達後要趕去碼頭，10:00 的船會很趕。'},
+     {k:'info', h:'遊覽船資訊（仁王丸航線）', b:'每天 9:00–16:00，每小時一班，共 8 班，單程約 50 分鐘。票價 ¥1,500；2 樓綠色座位僅限船內購買、不接受預訂，加 ¥600。<br>建議搭 10:00 班，約 10:50 下船，剛好銜接 11:00 五大堂。上船依排隊順序，想坐窗邊請提早排隊；從車站步行到碼頭約 10–15 分鐘。'},
+     {k:'info', h:'寺院參拜時間', b:'瑞巖寺 11月 8:30–16:00，15:30 停止受付；12月 8:30–15:30。票價 ¥1,000。<br>圓通院 11月 9:00–16:00、12月至3月 9:00–15:30，白天拝觀 ¥500。'},
+     {k:'info', h:'五大堂', b:'免費參觀，8:30–17:00。1604 年由伊達政宗建立，是東北現存最古老的桃山建築。堂內五大明王每 33 年開帳一次，下次是 2039 年。'},
+     {k:'food', h:'美食推薦', b:'烤牡蠣、牡蠣飯、海鮮丼、笹蒲鉾。'}
+   ]},
+ { n:5, date:'12/1', wd:'二', title:'返程日', color:'yellow',
+   route:'仙台朝市 → 甜點與伴手禮 → 機場',
+   stops:[
+     {t:'08:00–09:00', title:'仙台朝市、早餐', must:1, m:['walk'], d:'', g:[['','仙台朝市']]},
+     {t:'09:15', title:'飯店退房，暫寄行李', m:['walk'], d:'須於 11:00 前退房', g:[['','ホテル京阪仙台']]},
+     {t:'10:00–12:30', title:'S-PAL、PARCO、仙台站周邊採買與午餐', m:['walk'], d:'PARCO 營業 10:00–20:00；必逛：PARCO1 3 樓 Pokémon Center TOHOKU、8 樓吉伊卡哇樂園', g:[['S-PAL','S-PAL仙台'],['PARCO','仙台PARCO']]},
+     {t:'12:45', title:'返回飯店領取行李', m:['walk'], d:'', g:[['','ホテル京阪仙台']]},
+     {t:'13:15–13:45', title:'搭仙台機場線前往機場', m:['train'], d:'仙台空港アクセス線，約17–25分鐘・¥660'},
+     {t:'14:00–14:30', title:'抵達仙台機場，準備報到', m:[], d:'起飛前一小時內須完成報到', g:[['','仙台空港']]},
+     {t:'16:15', title:'BR117 仙台起飛', m:['plane'], d:'BR117'},
+     {t:'19:30', title:'抵達桃園機場第二航廈', m:['plane'], d:'BR117'}
+   ],
+   notes:[
+     {k:'warn', h:'退房提醒', b:'Hotel Keihan Sendai 須於 11:00 前退房。09:15 先退房並寄放行李，12:45 再回飯店領取。'},
+     {k:'info', h:'交通提醒', b:'13:15–13:45 搭仙台空港アクセス線（約25分鐘）前往仙台機場，14:00–14:30 抵達後準備報到。報到須在 15:15 前完成，建議不要再往後延。'},
+   ]}
+];
+
+var TODO = [
+ '核對 BR118、BR117 電子機票的完整起降時間及航廈（已核對）',
+ '確認護照、入境資料與 Visit Japan Web',
+ '準備日本 eSIM／網路漫遊',
+ '確認旅遊保險',
+ '完成網路報到、選位、選餐，並確認託運行李額度'
+];
+
+var GIFTS = [
+ {n:'Maison Cœlacanthe 腔棘魚最中', d:'營業 11:00–19:00'},
+ {n:'ankoya 銅鑼燒', d:'營業 10:00–19:00。常溫 4 種口味、冷藏 3 種口味。常溫版甜而不膩（推薦）；冷藏版也很好吃，但吃到最後幾口稍微有點膩'},
+ {n:'萩之月', d:''},
+ {n:'喜久福', d:''},
+ {n:'白松最中', d:''},
+ {n:'支倉燒', d:''}
+];
+
+var FOOD = [
+ {g:'仙台牛舌', c:'g-coral', items:[
+   {n:'牛たん料理 閣', d:'推薦：たたき、トマトサラダ', q:'牛たん料理 閣 仙台'},
+   {n:'たんや善治郎', q:'たんや善治郎 仙台'},
+   {n:'牛タン焼専門店 司', q:'牛タン焼専門店 司 仙台'}]},
+ {g:'豬排', c:'g-yellow', items:[
+   {n:'厚切りとんかつよし平 仙台中央店', d:'推薦：腰內（熟成ひれ）・營業 11:00–22:00', q:'厚切りとんかつよし平 仙台中央店'},
+   {n:'とんかつ 牡丹', d:'星期一・二・四 11:00–16:00；星期五・六・日・國定假日 11:00–15:00、17:00–19:00；中午大約兩點就會賣完（星期三未列出，出發前確認）', q:'とんかつ 牡丹 仙台'},
+   {n:'熟成とんかつ フライ家', d:'營業 11:00–14:30、17:30–20:30', q:'熟成とんかつ フライ家 仙台'}]},
+ {g:'松島海鮮', c:'g-sky', items:[
+   {n:'烤牡蠣'},{n:'牡蠣飯'},{n:'海鮮丼'},{n:'笹蒲鉾'}]},
+ {g:'小吃', c:'g-paper', items:[
+   {n:'阿部蒲鉾店 炸葫蘆（ひょうたん揚げ）', d:'一串兩顆・¥300・營業 10:00–18:30', q:'阿部蒲鉾店 仙台'}]},
+ {g:'飲品與點心', c:'g-green', items:[
+   {n:'毛豆奶昔'}]}
+];
+
+var SHOP = [
+ {n:'吉伊卡哇樂園（Chiikawa Land）', d:'仙台 PARCO「PARCO1」8 樓，東北唯一的常設官方商店', q:'ちいかわらんど 仙台PARCO'},
+ {n:'Pokémon Center TOHOKU', d:'仙台 PARCO「PARCO1」3 樓', q:'ポケモンセンタートウホク 仙台PARCO'}
+];
+
+var PACK = [
+ {g:'證件與金錢', c:'g-sky', items:['護照、電子機票、訂房資料','日圓現金、信用卡、錢包','旅遊保險資料、緊急聯絡資訊']},
+ {g:'衣物與保暖', c:'g-coral', items:['保暖外套、發熱衣、長袖上衣','長褲、厚襪、睡衣、換洗衣物','圍巾、手套、舒適防滑鞋','折疊傘、防潑水外套']},
+ {g:'電子用品', c:'g-yellow', items:['手機、充電線、充電器','行動電源（隨身攜帶）','eSIM／網路設定、耳機']},
+ {g:'生活用品', c:'g-green', items:['牙刷、保養品、化妝品','個人常備藥、衛生紙、濕紙巾','隱形眼鏡及相關用品（如需要）']}
+];
+
+/* ---------- 小插圖 ---------- */
+var ART = [
+ // 1 飛機＋電車
+ '<svg class="art" viewBox="0 0 112 84" aria-hidden="true">'
+ +'<g class="anim-drift-s"><path d="M26 26Q26 19 38 18L68 18Q80 20 86 26Q80 33 68 33L38 33Q26 33 26 26Z" fill="'+S+'"/>'
+ +'<path d="M30 20L24 8L36 8L44 19Z" fill="'+C+'"/><path d="M50 30L42 44L54 44L66 30Z" fill="'+Y+'"/>'
+ +'<circle class="ns" cx="48" cy="25" r="2" fill="'+K+'"/><circle class="ns" cx="58" cy="25" r="2" fill="'+K+'"/><circle class="ns" cx="68" cy="25" r="2" fill="'+K+'"/></g>'
+ +'<g class="anim-train"><rect x="14" y="52" width="84" height="22" rx="9" fill="'+G+'"/>'
+ +'<rect x="22" y="58" width="12" height="9" rx="3" fill="'+P+'"/><rect x="40" y="58" width="12" height="9" rx="3" fill="'+P+'"/><rect x="58" y="58" width="12" height="9" rx="3" fill="'+P+'"/><rect x="76" y="58" width="14" height="9" rx="4" fill="'+S+'"/>'
+ +'<circle cx="28" cy="76" r="4.5" fill="'+P+'"/><circle cx="84" cy="76" r="4.5" fill="'+P+'"/></g>'
+ +'<path d="M0 81H112" fill="none"/></svg>',
+ // 2 松島
+ '<svg class="art" viewBox="0 0 112 84" aria-hidden="true">'
+ +'<circle cx="92" cy="16" r="9" fill="'+Y+'"/>'
+ +'<path d="M0 52Q14 47 28 52T56 52T84 52T112 52V90H0Z" fill="'+S+'"/>'
+ +'<path d="M16 56Q26 38 46 40Q62 42 72 56Z" fill="'+Y+'"/>'
+ +'<path d="M36 20L29 42H43Z" fill="'+G+'"/><path d="M54 27L47 44H61Z" fill="'+G+'"/>'
+ +'<g class="anim-bob-s"><path d="M70 63H104L98 74H76Z" fill="'+C+'"/><rect x="80" y="55" width="13" height="8" rx="2" fill="'+P+'"/>'
+ +'<path d="M87 55V44" fill="none"/><path d="M87 44L96 47.5L87 51Z" fill="'+Y+'"/></g></svg>',
+ // 3 鳥居＋金蛇
+ '<svg class="art" viewBox="0 0 112 84" aria-hidden="true">'
+ +'<path d="M0 70H112V90H0Z" fill="'+G+'"/>'
+ +'<rect x="30" y="34" width="8" height="38" fill="'+C+'"/><rect x="74" y="34" width="8" height="38" fill="'+C+'"/>'
+ +'<rect x="30" y="43" width="52" height="6" fill="'+C+'"/>'
+ +'<path d="M20 20Q56 31 92 20L90 31Q56 42 22 31Z" fill="'+C+'"/>'
+ +'<path d="M40 78Q48 64 58 75T78 74" fill="none" style="stroke-width:9"/>'
+ +'<path d="M40 78Q48 64 58 75T78 74" fill="none" style="stroke:'+Y+';stroke-width:5"/>'
+ +'<circle cx="80" cy="73" r="5.5" fill="'+Y+'"/><circle class="ns" cx="82" cy="71.5" r="1.4" fill="'+K+'"/></svg>',
+ // 4 水族館
+ '<svg class="art" viewBox="0 0 112 84" aria-hidden="true">'
+ +'<rect class="ns" x="0" y="0" width="112" height="84" fill="'+S+'"/>'
+ +'<circle cx="20" cy="22" r="3.5" fill="'+P+'"/><circle cx="30" cy="12" r="2.5" fill="'+P+'"/><circle cx="96" cy="30" r="3" fill="'+P+'"/>'
+ +'<path d="M14 90Q8 76 14 66Q20 56 14 46" fill="none" style="stroke-width:9"/><path d="M14 90Q8 76 14 66Q20 56 14 46" fill="none" style="stroke:'+G+';stroke-width:5"/>'
+ +'<g class="anim-bob-s"><path d="M30 40Q48 24 66 40Q48 56 30 40Z" fill="'+C+'"/><path d="M66 40L80 29V51Z" fill="'+C+'"/><circle class="ns" cx="40" cy="37" r="2.2" fill="'+K+'"/></g>'
+ +'<path d="M72 64Q82 56 92 64Q82 72 72 64Z" fill="'+Y+'"/><path d="M92 64L100 58V70Z" fill="'+Y+'"/>'
+ +'<path d="M0 82H112" fill="none"/></svg>',
+ // 5 市場＋銅鑼燒
+ '<svg class="art" viewBox="0 0 112 84" aria-hidden="true">'
+ +'<path d="M10 12H102L97 30H15Z" fill="'+P+'"/>'
+ +'<path class="ns" d="M28 12H44L45 30H29Z" fill="'+C+'"/><path class="ns" d="M60 12H76L77 30H61Z" fill="'+C+'"/><path class="ns" d="M92 12H102L97 30H93Z" fill="'+C+'"/><path class="ns" d="M10 12H12L15 30H13Z" fill="'+C+'"/>'
+ +'<path d="M10 12H102L97 30H15Z" fill="none"/>'
+ +'<ellipse cx="56" cy="68" rx="28" ry="10" fill="'+Y+'"/>'
+ +'<ellipse cx="56" cy="61" rx="25" ry="7" fill="'+C+'"/>'
+ +'<ellipse cx="56" cy="53" rx="28" ry="10" fill="'+Y+'"/>'
+ +'<path d="M40 51Q47 47 56 47" fill="none" style="stroke:'+P+';stroke-width:2.5"/>'
+ +'<g class="anim-bob-s"><path d="M46 40q-4 -4 0 -7" fill="none"/><path d="M60 40q-4 -4 0 -7" fill="none"/></g></svg>',
+ // 6 市區：瑞鳳殿屋頂與櫸木
+ '<svg class="art" viewBox="0 0 112 84" aria-hidden="true">'
+ +'<path d="M0 70H112V90H0Z" fill="'+G+'"/>'
+ +'<rect x="12" y="46" width="36" height="24" fill="'+C+'"/>'
+ +'<path d="M5 48L30 28L55 48Z" fill="'+Y+'"/>'
+ +'<rect x="26" y="54" width="8" height="16" fill="'+P+'"/>'
+ +'<g class="anim-tree"><rect x="82" y="46" width="9" height="24" fill="'+Y+'"/>'
+ +'<circle cx="86" cy="32" r="16" fill="'+G+'"/><circle cx="71" cy="42" r="11" fill="'+G+'"/><circle cx="101" cy="42" r="11" fill="'+G+'"/></g>'
+ +'<circle class="ns" cx="20" cy="18" r="6" fill="'+Y+'"/></svg>'
+];
+
+/* ---------- 工具 ---------- */
+function $(id){ return document.getElementById(id); }
+var toastTimer;
+function toast(msg){
+  var el=$('toast'); el.textContent=msg; el.classList.add('show');
+  clearTimeout(toastTimer); toastTimer=setTimeout(function(){ el.classList.remove('show'); },1800);
+}
+function copyText(text, okMsg){
+  function fallback(){
+    var ta=document.createElement('textarea'); ta.value=text; ta.setAttribute('readonly','');
+    ta.style.cssText='position:fixed;top:0;left:0;opacity:0';
+    document.body.appendChild(ta); ta.select();
+    var ok=false; try{ ok=document.execCommand('copy'); }catch(e){}
+    document.body.removeChild(ta);
+    toast(ok? okMsg : '複製失敗，請手動選取');
+  }
+  if(navigator.clipboard && window.isSecureContext){
+    navigator.clipboard.writeText(text).then(function(){ toast(okMsg); }, fallback);
+  } else { fallback(); }
+}
+var store = {};
+function load(){
+  try{
+    var v3=localStorage.getItem('sendai2026-checks-v3');
+    if(v3){ store=JSON.parse(v3)||{}; }
+    else{
+      var old=JSON.parse(localStorage.getItem('sendai2026-checks-v2')||localStorage.getItem('sendai2026-checks')||'{}')||{};
+      store={}; Object.keys(old).forEach(function(k){ if(k.charAt(0)==='p'||k.charAt(0)==='g') store[k]=old[k]; });
+    }
+  }catch(e){ store={}; }
+  if(!('t0' in store)) store.t0=true;
+}
+function save(){ try{ localStorage.setItem('sendai2026-checks-v3', JSON.stringify(store)); }catch(e){} }
+
+/* ---------- 倒數 ---------- */
+function countdown(){
+  var now=new Date(), today=new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  var start=new Date(2026,10,27), end=new Date(2026,11,1);
+  var diff=Math.round((start-today)/864e5), num=$('cdNum'), big=$('cdBig');
+  if(diff>0){ num.innerHTML=diff+'<small style="font-size:18px"> 天</small>'; big.textContent='還有 '+diff+' 天出發'; }
+  else if(today<=end){
+    var day=Math.round((today-start)/864e5)+1;
+    num.textContent='DAY '+day; big.textContent='旅程進行中，玩得開心！';
+  } else { num.textContent='完'; big.textContent='旅程結束，歡迎回家'; }
+}
+
+/* ---------- 航班 ---------- */
+function ticket(o){
+  var plane='<svg viewBox="0 0 120 34" preserveAspectRatio="none" aria-hidden="true"><path d="M2 20H88" fill="none" stroke="'+K+'" stroke-width="3" stroke-dasharray="6 7" stroke-linecap="round"/>'
+   +'<g stroke="'+K+'" stroke-width="2.5" stroke-linejoin="round" transform="translate(88 3)"><path d="M0 14Q0 7 7 6L20 6Q28 8 30 14Q28 20 20 21L7 21Q0 21 0 14Z" fill="'+S+'"/><path d="M6 17L2 28H8L15 17Z" fill="'+Y+'"/><path d="M3 8L0 1H6L9 7Z" fill="'+C+'"/></g></svg>';
+  function tm(v){ return v==='待確認' ? '<span class="tbd">待確認</span>' : '<strong>'+v+'</strong>'; }
+  return '<article class="ticket"><div class="t-head" style="background:var(--'+o.color+')"><b>'+o.dir+'</b><span>'+o.flight+'・長榮航空 EVA Air</span></div>'
+   +'<div class="t-route"><span class="code">'+o.from+'</span><span class="mid">'+plane+'</span><span class="code">'+o.to+'</span></div>'
+   +'<div class="t-names"><span>'+o.fromN+'</span><span>'+o.toN+'</span></div>'
+   +'<div class="t-times"><div><small>起飛</small>'+tm(o.dep)+'</div><div><small>抵達</small>'+tm(o.arr)+'</div></div>'
+   +'<div class="t-date">'+o.date+'</div></article>';
+}
+function renderFlights(){
+  $('flightCards').innerHTML =
+    ticket({dir:'去程',color:'sky',flight:'BR118',from:'TPE',to:'SDJ',fromN:'桃園國際機場',toN:'仙台機場',date:'2026/11/27（五）・桃園第2航廈出發・A321',dep:'10:15',arr:'14:25'})
+   +ticket({dir:'回程',color:'yellow',flight:'BR117',from:'SDJ',to:'TPE',fromN:'仙台機場',toN:'桃園國際機場',date:'2026/12/1（二）・抵達桃園第2航廈・A321',dep:'16:15',arr:'19:30'});
+}
+
+/* ---------- 每日行程 ---------- */
+var cur=0, panel, tabs;
+function mapsHTML(s){
+  if(!s.g) return '';
+  return '<div class="maps">'+s.g.map(function(x){
+    return '<a class="maplink" target="_blank" rel="noopener" data-q="'+x[1]+'" href="https://www.google.com/maps/search/?api=1&amp;query='+encodeURIComponent(x[1])+'">'+(x[0]?'地圖・'+x[0]:'地圖')+'</a>';
+  }).join('')+'</div>';
+}
+function stopHTML(s,i){
+  var tags=s.m.map(function(k){ return '<span class="tag '+TAGS[k][1]+'">'+TAGS[k][0]+'</span>'; }).join('');
+  return '<li class="'+(s.must?'must':'')+'" style="--i:'+i+'"><div class="stop"><div class="stop-top"><span class="time">'+s.t+'</span>'
+   +(s.must?'<span class="must-badge">★ 必去</span>':'')+'</div><div class="stop-title">'+s.title+'</div>'
+   +'<div class="modes">'+tags+(s.d?'<span class="mode-d">'+s.d+'</span>':'')+'</div>'+mapsHTML(s)+'</div></li>';
+}
+var WEATHER={
+ '11/27':{hi:18,lo:6,txt:'晴時多雲',p:20,ic:'ps'},
+ '11/28':{hi:17,lo:8,txt:'陰天',p:40,ic:'c'},
+ '11/29':{hi:12,lo:4,txt:'陰天偶陣晴',p:30,ic:'cs'},
+ '11/30':{hi:15,lo:3,txt:'晴時多雲',p:20,ic:'ps'},
+ '12/1':{hi:16,lo:7,txt:'晴時多雲',p:20,ic:'ps'}
+};
+function wIcon(k){
+  var st='stroke="'+K+'" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"';
+  var cloud='<path d="M9 23a5 5 0 0 1 0-10a7 7 0 0 1 13-2a6 6 0 0 1 3 12Z" fill="'+P+'" '+st+'/>';
+  var sunBig='<circle cx="11" cy="11" r="6" fill="'+Y+'" '+st+'/><path d="M11 1.5V3M2 11H3.5M3.8 3.8L4.9 4.9M18.2 3.8L17.1 4.9" fill="none" '+st+'/>';
+  var sunSmall='<circle cx="23" cy="9" r="5" fill="'+Y+'" '+st+'/>';
+  var body = k==='ps' ? sunBig+cloud : k==='cs' ? sunSmall+cloud : cloud;
+  return '<svg class="wicon" viewBox="0 0 32 28" aria-hidden="true">'+body+'</svg>';
+}
+function weatherHTML(d){
+  var w=WEATHER[d.date]; if(!w) return '';
+  var chips=[];
+  if(w.hi<=12) chips.push('<span class="wchip cold">這幾天最冷</span>');
+  else if(w.hi>=17) chips.push('<span class="wchip">白天較溫暖</span>');
+  if(w.hi-w.lo>=11) chips.push('<span class="wchip">早晚溫差大</span>');
+  return '<div class="weather">'+wIcon(w.ic)+'<span class="wcond">'+w.txt+'</span><span class="wtemp">'+w.lo+'–'+w.hi+'°C</span>'
+   +'<span class="wchip'+(w.p>=40?' cold':'')+'">降雨機率 '+w.p+'%</span>'+chips.join('')
+   +'</div>';
+}
+function renderDay(i){
+  var d=DAYS[i];
+  panel.setAttribute('aria-labelledby','tab-'+i);
+  panel.innerHTML =
+   '<div class="card dayhead" style="background:var(--'+d.color+')"><div class="txt"><span class="daylabel">DAY '+d.n+'・'+d.date+'（'+d.wd+'）</span>'
+   +'<h3>'+d.title+'</h3><p class="route">'+d.route+'</p></div><div class="artbox">'+ART[d.art!=null?d.art:i]+'</div></div>'
+   +weatherHTML(d)
+   +'<ol class="tl">'+d.stops.map(stopHTML).join('')+'</ol>'
+   +d.notes.map(function(n){ return '<div class="note '+n.k+'"><b>'+n.h+'</b>'+(n.html||n.b||'')+'</div>'; }).join('');
+  panel.classList.remove('pop'); void panel.offsetWidth; panel.classList.add('pop');
+}
+function selectDay(i, focus){
+  cur=i;
+  Array.prototype.forEach.call(tabs.children, function(b,k){
+    var on=k===i; b.setAttribute('aria-selected', on?'true':'false'); b.tabIndex=on?0:-1;
+    if(on){
+      b.style.animation='none'; void b.offsetWidth; b.style.animation='';
+      var left=b.offsetLeft-(tabs.clientWidth-b.clientWidth)/2;
+      try{ tabs.scrollTo({left:left, behavior:smooth()}); }catch(e){ tabs.scrollLeft=left; }
+      if(focus) b.focus();
+    }
+  });
+  renderDay(i);
+}
+function renderTabs(){
+  tabs=$('dayTabs'); panel=$('dayPanel');
+  tabs.innerHTML = DAYS.map(function(d,i){
+    return '<button class="daytab" role="tab" id="tab-'+i+'" aria-controls="dayPanel" aria-selected="false" tabindex="-1" type="button">'
+     +'<span class="d">DAY '+d.n+'</span><span class="n">'+d.date+'</span><span class="d">'+d.wd+'</span></button>';
+  }).join('');
+  tabs.addEventListener('click', function(e){
+    var b=e.target.closest('.daytab'); if(!b) return;
+    selectDay(Array.prototype.indexOf.call(tabs.children,b));
+  });
+  tabs.addEventListener('keydown', function(e){
+    var n=DAYS.length, k=null;
+    if(e.key==='ArrowRight') k=(cur+1)%n; else if(e.key==='ArrowLeft') k=(cur+n-1)%n;
+    else if(e.key==='Home') k=0; else if(e.key==='End') k=n-1;
+    if(k!==null){ e.preventDefault(); selectDay(k,true); }
+  });
+  var today=new Date(); today=new Date(today.getFullYear(),today.getMonth(),today.getDate());
+  var idx=Math.round((today-new Date(2026,10,27))/864e5);
+  selectDay(idx>=0 && idx<DAYS.length ? idx : 0);
+}
+
+/* ---------- 清單 ---------- */
+function checkHTML(id,text){
+  return '<label class="ck'+(store[id]?' done':'')+'"><input type="checkbox" data-id="'+id+'"'+(store[id]?' checked':'')+'><span>'+text+'</span></label>';
+}
+function updateProgress(prefix, ids, barId, countId){
+  var n=ids.filter(function(id){ return store[id]; }).length;
+  $(countId).textContent=n+' / '+ids.length+' 項完成';
+  var bar=$(barId); bar.style.width=(n/ids.length*100)+'%'; bar.classList.toggle('zero', n===0);
+}
+var todoIds=[], packIds=[], giftIds=[], foodIds=[], shopIds=[];
+function renderLists(){
+  todoIds=TODO.map(function(_,i){ return 't'+i; });
+  $('todoList').innerHTML=TODO.map(function(t,i){ return checkHTML('t'+i,t); }).join('');
+  var k=0, html='';
+  PACK.forEach(function(g){
+    html+='<h3 class="grp '+g.c+'">'+g.g+'</h3>';
+    g.items.forEach(function(t){ var id='p'+(k++); packIds.push(id); html+=checkHTML(id,t); });
+  });
+  $('packList').innerHTML=html;
+  giftIds=GIFTS.map(function(_,i){ return 'g'+i; });
+  $('giftList').innerHTML=GIFTS.map(function(g,i){
+    return checkHTML('g'+i, g.n+(g.d?'<br><small>'+g.d+'</small>':''));
+  }).join('');
+  var fk=0, fh='';
+  FOOD.forEach(function(g){
+    fh+='<h3 class="grp '+g.c+'">'+g.g+'</h3>';
+    g.items.forEach(function(it){
+      var id='f'+(fk++); foodIds.push(id);
+      var link=it.q?' <a class="maplink" target="_blank" rel="noopener" data-q="'+it.q+'" href="https://www.google.com/maps/search/?api=1&amp;query='+encodeURIComponent(it.q)+'">地圖</a>':'';
+      fh+=checkHTML(id, it.n+link+(it.d?'<br><small>'+it.d+'</small>':''));
+    });
+  });
+  $('foodList').innerHTML=fh;
+  shopIds=SHOP.map(function(_,i){ return 's'+i; });
+  $('shopList').innerHTML=SHOP.map(function(it,i){
+    var link=' <a class="maplink" target="_blank" rel="noopener" data-q="'+it.q+'" href="https://www.google.com/maps/search/?api=1&amp;query='+encodeURIComponent(it.q)+'">地圖</a>';
+    return checkHTML('s'+i, it.n+link+'<br><small>'+it.d+'</small>');
+  }).join('');
+  refresh();
+}
+function refresh(){
+  updateProgress('t', todoIds, 'todoBar', 'todoCount');
+  updateProgress('p', packIds, 'packBar', 'packCount');
+  updateProgress('g', giftIds, 'giftBar', 'giftCount');
+  updateProgress('f', foodIds, 'foodBar', 'foodCount');
+  updateProgress('s', shopIds, 'shopBar', 'shopCount');
+}
+document.addEventListener('click', function(e){
+  var a=e.target.closest && e.target.closest('a.maplink'); if(!a) return;
+  var framed=false; try{ framed=window.self!==window.top; }catch(err){ framed=true; }
+  if(framed){
+    e.preventDefault();
+    copyText(a.getAttribute('data-q')||'', '這裡無法直接開地圖，已複製店名，請貼到 Google 地圖搜尋');
+    return;
+  }
+  var w=null;
+  try{ w=window.open(a.href,'_blank'); }catch(err){}
+  if(w){ try{ w.opener=null; }catch(err){} e.preventDefault(); return; }
+  copyText(a.getAttribute('data-q')||'', '地圖沒有自動開啟，已複製店名，可貼到 Google 地圖搜尋');
+});
+document.addEventListener('change', function(e){
+  var t=e.target; if(!t.matches || !t.matches('.ck input')) return;
+  store[t.getAttribute('data-id')]=t.checked; save();
+  t.closest('.ck').classList.toggle('done', t.checked);
+  refresh();
+});
+function resetGroup(ids, root){
+  ids.forEach(function(id){ store[id]=false; });
+  save();
+  Array.prototype.forEach.call($(root).querySelectorAll('input'), function(i){ i.checked=false; i.closest('.ck').classList.remove('done'); });
+  refresh();
+}
+function listText(title, items, ids){
+  return title+'\n'+items.map(function(t,i){ return (store[ids[i]]?'[x] ':'[ ] ')+t; }).join('\n');
+}
+$('copyTodo').addEventListener('click', function(){ copyText(listText('出發前待辦', TODO, todoIds), '已複製待辦清單'); });
+$('resetTodo').addEventListener('click', function(){ resetGroup(todoIds,'todoList'); });
+$('copyPack').addEventListener('click', function(){
+  var flat=[], k=0, out='冬季行李清單';
+  PACK.forEach(function(g){ out+='\n\n'+g.g; g.items.forEach(function(t){ out+='\n'+(store[packIds[k]]?'[x] ':'[ ] ')+t; k++; }); });
+  copyText(out, '已複製行李清單');
+});
+$('resetPack').addEventListener('click', function(){ resetGroup(packIds,'packList'); });
+$('copyGift').addEventListener('click', function(){
+  copyText('必買伴手禮\n'+GIFTS.map(function(g,i){ return (store[giftIds[i]]?'[x] ':'[ ] ')+g.n; }).join('\n'), '已複製伴手禮清單');
+});
+$('resetGift').addEventListener('click', function(){ resetGroup(giftIds,'giftList'); });
+$('copyFood').addEventListener('click', function(){
+  var k=0, out='美食推薦';
+  FOOD.forEach(function(g){ out+='\n\n'+g.g; g.items.forEach(function(it){ out+='\n'+(store[foodIds[k]]?'[x] ':'[ ] ')+it.n; k++; }); });
+  copyText(out, '已複製美食清單');
+});
+$('resetFood').addEventListener('click', function(){ resetGroup(foodIds,'foodList'); });
+$('copyShop').addEventListener('click', function(){
+  copyText('購物必逛\n'+SHOP.map(function(it,i){ return (store[shopIds[i]]?'[x] ':'[ ] ')+it.n; }).join('\n'), '已複製購物清單');
+});
+$('resetShop').addEventListener('click', function(){ resetGroup(shopIds,'shopList'); });
+$('copyAddr').addEventListener('click', function(){
+  copyText('ホテル京阪仙台\n宮城県仙台市青葉区中央3丁目3-5\n+81 22-263-0321', '已複製日文地址');
+});
+
+/* ---------- 緊急聯絡備註 ---------- */
+(function(){
+  var box=$('emNotes'); if(!box) return;
+  try{ box.value=localStorage.getItem('sendai2026-notes')||''; }catch(e){}
+  box.addEventListener('input', function(){ try{ localStorage.setItem('sendai2026-notes', box.value); }catch(e){} });
+})();
+
+/* ---------- 選單高亮 ---------- */
+function navSpy(){
+  var links=Array.prototype.slice.call($('navlinks').querySelectorAll('a'));
+  var map={}; links.forEach(function(a){ map[a.getAttribute('href').slice(1)]=a; });
+  function mark(id){
+    links.forEach(function(a){ a.classList.toggle('active', a===map[id]); });
+    var a=map[id], box=$('navlinks'); if(!a) return;
+    var left=a.offsetLeft-(box.clientWidth-a.clientWidth)/2;
+    try{ box.scrollTo({left:left, behavior:smooth()}); }catch(e){ box.scrollLeft=left; }
+  }
+  mark('top');
+  if(!('IntersectionObserver' in window)) return;
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(en){ if(en.isIntersecting) mark(en.target.id); });
+  }, {rootMargin:'-30% 0px -60% 0px'});
+  Object.keys(map).forEach(function(id){ var s=$(id); if(s) io.observe(s); });
+}
+
+/* ---------- 啟動 ---------- */
+load(); countdown(); renderFlights(); renderTabs(); renderLists(); navSpy();
+})();
+</script>
+</body>
+</html>
